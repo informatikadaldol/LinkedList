@@ -176,67 +176,71 @@ while (temp != NULL) {
 }
 
 int main() {
-Mahasiswa *head = NULL;
-int pilihan;
-int pilihan2;
-int ulang;
-int banyak;
-cout<<"berapa kali anda ingin mengulang? :";
-cin>>banyak;
-do{
-	system("cls");
-	cout<<"\t\tMenu"<<endl;
-cout<<"1. Menambahkan Data Mahasiswa"<<endl;
-cout<<"2. Menghapus Data Mahasiswa"<<endl;
-cout<<"3. Menampilkan Data Mahasiswa"<<endl;
-cout<<"4. Keluar Program"<<endl;
-cout<<"masukan pilihan anda disini :";
-cin>>pilihan;
+    Mahasiswa *head = NULL;
+    int pilihan;
+    int pilihan2;
+    int i = 0; 
+    int banyak;
+    cout << "Berapa kali anda ingin mengulang? : ";
+    cin >> banyak;
+    do {
+        system("cls");
+        cout << "\t\tMenu" << endl;
+        cout << "1. Menambahkan Data Mahasiswa" << endl;
+        cout << "2. Menghapus Data Mahasiswa" << endl;
+        cout << "3. Menampilkan Data Mahasiswa" << endl;
+        cout << "4. Keluar Program" << endl;
+        cout << "Masukkan pilihan anda disini : ";
+        cin >> pilihan;
 
-switch(pilihan){
-	case 1:
-		cout<<"1.Tambah Data Di Awal "<<endl;
-		cout<<"2.Tambah Data Di Akhir "<<endl;
-		cout<<"3.Tambah Berdasarkan Index"<<endl;
-		cout<<"masukan pilihan :";
-		cin>>pilihan2;
-		if(pilihan2 == 1){
-			tambahAwal(head);
-		}else if(pilihan == 2){
-			tambahAkhir(head);
-		}else if(pilihan2 == 3){
-			tambahIndex(head);
-		}else{
-			cout<<"pilihan yang anda masukan salah!"<<endl;
-		}
-		break;
-	case 2:
-		cout<<"1.Hapus Data Di Awal "<<endl;
-		cout<<"2.Hapus Data Di Akhir "<<endl;
-		cout<<"3.Hapus Berdasarkan Index"<<endl;
-		cout<<"masukan pilihan :";
-		cin>>pilihan2;
-		if(pilihan2 == 1){
-			hapusAwal(head);
-		}else if(pilihan2 == 2){
-			hapusAkhir(head);
-		}else if(pilihan2 == 3){
-			hapusIndex(head);
-		}else{
-			cout<<"pilihan yang anda masukan salah!"<<endl;
-		}
-		break;
-	case 3:
-		tampilData(head);
-		break;
-	case 4:
-		cout<<"Anda Telah Keluar Dari Program"<<endl;
-		break;
-  }
-  
-	banyak++;
- } while(ulang == banyak);
+        switch(pilihan) {
+            case 1:
+                cout << "1.Tambah Data Di Awal " << endl;
+                cout << "2.Tambah Data Di Akhir " << endl;
+                cout << "3.Tambah Berdasarkan Index" << endl;
+                cout << "Masukkan pilihan :";
+                cin >> pilihan2;
+                if(pilihan2 == 1){
+                    tambahAwal(head);
+                } else if(pilihan2 == 2){
+                    tambahAkhir(head);
+                } else if(pilihan2 == 3){
+                    tambahIndex(head);
+                } else {
+                    cout << "Pilihan yang anda masukan salah!" << endl;
+                }
+                break;
+            case 2:
+                cout << "1.Hapus Data Di Awal " << endl;
+                cout << "2.Hapus Data Di Akhir " << endl;
+                cout << "3.Hapus Berdasarkan Index" << endl;
+                cout << "Masukkan pilihan :";
+                cin >> pilihan2;
+                if(pilihan2 == 1){
+                    hapusAwal(head);
+                } else if(pilihan2 == 2){
+                    hapusAkhir(head);
+                } else if(pilihan2 == 3){
+                    hapusIndex(head);
+                } else {
+                    cout << "Pilihan yang anda masukan salah!" << endl;
+                }
+                break;
+            case 3:
+                tampilData(head);
+                break;
+            case 4:
+                cout << "Anda Telah Keluar Dari Program" << endl;
+                break;
+            default:
+                cout << "Pilihan yang anda masukan salah!" << endl;
+                break;
+        }
 
+        i++; // menambah variabel penghitung iterasi
+    } while(i < banyak);
+
+    return 0;
 }
 
 
